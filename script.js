@@ -1,4 +1,4 @@
-function calculateMinCost() {
+function calculateMinCost(arr) {
 	let ans = 0;
 	while(arr.length>1){
 		arr.sort((a, b) => a-b);
@@ -8,3 +8,4 @@ function calculateMinCost() {
 	}
 	return ans;
 }  
+// 6 12 16 28
