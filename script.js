@@ -1,4 +1,6 @@
-function calculateMinCost(arr) {
+function calculateMinCost() {
+	let arr = form.children[1].value.trim().split(',');
+	arr = arr.map((e) => Number(e.trim()));
 	let ans = 0;
 	while(arr.length>1){
 		arr.sort((a, b) => a-b);
@@ -6,6 +8,6 @@ function calculateMinCost(arr) {
 		arr.unshift(add);
 		ans+=add;
 	}
-	return ans;
+	result.innerText = ans;
 }  
 // 6 12 16 28
