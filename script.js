@@ -1,13 +1,20 @@
 function calculateMinCost() {
-	let arr = form.children[1].value.trim().split(',');
-	arr = arr.map((e) => Number(e.trim()));
-	let ans = 0;
-	while(arr.length>1){
-		arr.sort((a, b) => a-b);
-		let add = (arr.shift() + arr.shift());
-		arr.unshift(add);
-		ans+=add;
+  //your code here
+  let string = document.getElementById("rope-lengths").value
+
+	let arr = string.split(",");
+	let finalValue =0;
+	while(arr.length > 1){
+		arr.sort((a,b) =>{return(a-b)});
+		let value = parseInt (arr.shift());
+		let value1 = parseInt(arr.shift());
+		let mainValue = value+value1;
+		finalValue = finalValue + mainValue;
+		arr.push(mainValue);
+
 	}
-	result.innerText = ans;
-}  
-// 6 12 16 28
+  let result = document.getElementById("result");
+	result.innerText = finalValue;
+	return finalValue;
+
+}
